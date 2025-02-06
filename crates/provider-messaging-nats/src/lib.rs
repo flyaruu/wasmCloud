@@ -43,7 +43,7 @@ pub async fn run() -> anyhow::Result<()> {
 /// [`NatsClientBundle`]s hold a NATS client and information (subscriptions)
 /// related to it.
 ///
-/// This struct is necssary because subscriptions are *not* automatically removed on client drop,
+/// This struct is necessary because subscriptions are *not* automatically removed on client drop,
 /// meaning that we must keep track of all subscriptions to close once the client is done
 #[derive(Debug)]
 struct NatsClientBundle {
@@ -198,7 +198,7 @@ impl NatsMessagingProvider {
             };
             // Listen for NATS message(s)
             while let Some(msg) = subscriber.next().await {
-                debug!(?msg, ?component_id, "received messsage");
+                debug!(?msg, ?component_id, "received message");
                 // Set up tracing context for the NATS message
                 let span = tracing::debug_span!("handle_message", ?component_id);
 
@@ -297,15 +297,14 @@ impl Provider for NatsMessagingProvider {
     #[instrument(level = "debug", skip_all, fields(target_id))]
     async fn receive_link_config_as_source(
         &self,
-        LinkConfig {
-            target_id, config, ..
-        }: LinkConfig<'_>,
+        link_config: LinkConfig<'_>,
     ) -> anyhow::Result<()> {
-        let config = if config.is_empty() {
+        let target_id = link_config.target_id;
+        let config = if link_config.config.is_empty() {
             self.default_config.clone()
         } else {
             // create a config from the supplied values and merge that with the existing default
-            match ConnectionConfig::from_map(config) {
+            match ConnectionConfig::from_link_config(&link_config) {
                 Ok(cc) => self.default_config.merge(&cc),
                 Err(e) => {
                     error!("Failed to build connection configuration: {e:?}");
@@ -336,7 +335,7 @@ impl Provider for NatsMessagingProvider {
             let client = &bundle.client;
             debug!(
                 component_id,
-                "droping NATS client [{}] for (consumer) component",
+                "dropping NATS client [{}] for (consumer) component",
                 format!(
                     "{}:{}",
                     client.server_info().server_id,
@@ -353,7 +352,7 @@ impl Provider for NatsMessagingProvider {
         Ok(())
     }
 
-    #[instrument(level = "info", skip_all, fields(target_id = info.get_source_id()))]
+    #[instrument(level = "info", skip_all, fields(target_id = info.get_target_id()))]
     async fn delete_link_as_source(&self, info: impl LinkDeleteInfo) -> anyhow::Result<()> {
         // If we were the source, then the component we're invoking is the target
         let component_id = info.get_target_id();
@@ -363,7 +362,7 @@ impl Provider for NatsMessagingProvider {
             let client = &bundle.client;
             debug!(
                 component_id,
-                "droping NATS client [{}] and associated subscriptions [{}] for (handler) component",
+                "dropping NATS client [{}] and associated subscriptions [{}] for (handler) component",
                 format!(
                     "{}:{}",
                     client.server_info().server_id,

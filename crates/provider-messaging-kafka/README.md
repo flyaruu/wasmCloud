@@ -151,7 +151,7 @@ spec:
     - name: nats
       type: capability
       properties:
-        image: ghcr.io/wasmcloud/messaging-nats:0.24.0
+        image: ghcr.io/wasmcloud/messaging-nats:0.25.0
 ```
 
 Then, we must set up the named config that we're expecting to see (`simple-subscription`):
@@ -190,7 +190,7 @@ docker exec -it \
     --from-beginning
 ```
 
-Then, you should be able to send a message using the kafka container (note that this comamnd will not return, but will instead produce a prompt):
+Then, you should be able to send a message using the kafka container (note that this command will not return, but will instead produce a prompt):
 
 ```console
 docker exec -it \

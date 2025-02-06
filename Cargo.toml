@@ -244,7 +244,7 @@ exponential-backoff = { version = "2.0", default-features = false }
 file-guard = { version = "0.2.0", default-features = false }
 futures = { version = "0.3", default-features = false }
 geo-types = { version = "0.7", default-features = false }
-handlebars = { version = "6.2", default-features = false }
+handlebars = { version = "6.3", default-features = false }
 heck = { version = "0.5", default-features = false }
 hex = { version = "0.4", default-features = false }
 http = { version = "1", default-features = false, features = ["std"] }
@@ -262,10 +262,10 @@ nix = { version = "0.29", default-features = false }
 nkeys = { version = "0.4", default-features = false }
 normpath = { version = "1", default-features = false }
 notify = { version = "6", default-features = false }
-nuid = { version = "0.4", default-features = false }
+nuid = { version = "0.5", default-features = false }
 num = { version = "0.4", default-features = false }
 oci-client = { version = "0.14", default-features = false }
-oci-wasm = { version = "0.2.0", default-features = false }
+oci-wasm = { version = "0.2.1", default-features = false }
 once_cell = { version = "1", default-features = false }
 opentelemetry = { version = "0.27", default-features = false }
 opentelemetry-appender-tracing = { version = "0.27", default-features = false }
@@ -277,7 +277,7 @@ path-clean = { version = "1", default-features = false }
 pg_bigdecimal = { version = "0.1", default-features = false }
 pin-project-lite = { version = "0.2", default-features = false }
 postgres-types = { version = "0.2", default-features = false }
-provider-archive = { version = "^0.14.0", path = "./crates/provider-archive", default-features = false }
+provider-archive = { version = "^0.15.0", path = "./crates/provider-archive", default-features = false }
 quote = { version = "1", default-features = false }
 rand = { version = "0.8", default-features = false }
 redis = { version = "0.25", default-features = false }
@@ -337,32 +337,32 @@ uuid = { version = "1", default-features = false }
 vaultrs = { version = "0.7", default-features = false }
 wadm = { version = "0.19.0", default-features = false }
 wadm-client = { version = "0.8.0", default-features = false }
-wadm-types = { version = "0.8.0", default-features = false }
+wadm-types = { version = "0.8.1", default-features = false }
 walkdir = { version = "2", default-features = false }
 warp = { version = "0.3", default-features = false }
-wascap = { version = "^0.15.2", path = "./crates/wascap", default-features = false }
+wascap = { version = "^0.15.3", path = "./crates/wascap", default-features = false }
 wash-cli = { version = "0", path = "./crates/wash-cli", default-features = false }
 wash-lib = { version = "^0.32.0", path = "./crates/wash-lib", default-features = false }
 wasi = { version = "0.13.3", default-features = false }
 wasm-pkg-client = { version = "0.9.0", default-features = false }
 wasm-pkg-core = { version = "0.9.0", default-features = false }
 wasi-preview1-component-adapter-provider = { version = "25", default-features = false }
-wasm-encoder = { version = "0.221", default-features = false }
+wasm-encoder = { version = "0.224", default-features = false }
 wasm-gen = { version = "0.1", default-features = false }
 wasmcloud-component = { version = "0", path = "crates/component", default-features = false }
-wasmcloud-control-interface = { version = "2.2.0", path = "./crates/control-interface", default-features = false }
+wasmcloud-control-interface = { version = "2.3.0", path = "./crates/control-interface", default-features = false }
 wasmcloud-core = { version = "^0.16.0", path = "./crates/core", default-features = false }
 wasmcloud-host = { version = "^0.24.0", path = "./crates/host", default-features = false }
 wasmcloud-provider-blobstore-azure = { version = "*", path = "./crates/provider-blobstore-azure", default-features = false }
 wasmcloud-provider-blobstore-fs = { version = "*", path = "./crates/provider-blobstore-fs", default-features = false }
 wasmcloud-provider-blobstore-s3 = { version = "*", path = "./crates/provider-blobstore-s3", default-features = false }
 wasmcloud-provider-http-client = { version = "*", path = "./crates/provider-http-client", default-features = false }
-wasmcloud-provider-http-server = { version = "*", path = "./crates/provider-http-server", default-features = false }
+wasmcloud-provider-http-server = { version = "^0.26.0", path = "./crates/provider-http-server", default-features = false }
 wasmcloud-provider-keyvalue-nats = { version = "*", path = "./crates/provider-keyvalue-nats", default-features = false }
 wasmcloud-provider-keyvalue-redis = { version = "*", path = "./crates/provider-keyvalue-redis", default-features = false }
 wasmcloud-provider-keyvalue-vault = { version = "*", path = "./crates/provider-keyvalue-vault", default-features = false }
 wasmcloud-provider-messaging-kafka = { version = "*", path = "./crates/provider-messaging-kafka", default-features = false }
-wasmcloud-provider-messaging-nats = { version = "*", path = "./crates/provider-messaging-nats", default-features = false }
+wasmcloud-provider-messaging-nats = { version = "0.25.0", path = "./crates/provider-messaging-nats", default-features = false }
 wasmcloud-provider-sdk = { version = "^0.13.0", path = "./crates/provider-sdk", default-features = false }
 wasmcloud-provider-sqldb-postgres = { version = "*", path = "./crates/provider-sqldb-postgres", default-features = false }
 wasmcloud-runtime = { version = "^0.8.0", path = "./crates/runtime", default-features = false }
@@ -378,12 +378,12 @@ wasmtime-wit-bindgen = { version = "26", default-features = false }
 wat = { version = "1", default-features = false }
 webpki-roots = { version = "0.26", default-features = false }
 which = { version = "4", default-features = false }
-wit-bindgen = { version = "0.32", default-features = false }
-wit-bindgen-core = { version = "0.33", default-features = false }
-wit-bindgen-go = { version = "0.32", default-features = false }
+wit-bindgen = { version = "0.38.0", default-features = false }
+wit-bindgen-core = { version = "0.38.0", default-features = false }
+wit-bindgen-go = { version = "0.38.0", default-features = false }
 wit-bindgen-wrpc = { version = "0.9", default-features = false }
-wit-component = { version = "0.219", default-features = false }
-wit-parser = { version = "0.219", default-features = false }
+wit-component = { version = "0.224", default-features = false }
+wit-parser = { version = "0.224", default-features = false }
 wrpc-interface-blobstore = { version = "0.21", default-features = false }
 wrpc-interface-http = { version = "0.31", default-features = false }
 wrpc-runtime-wasmtime = { version = "0.25", default-features = false }
